@@ -1,0 +1,92 @@
+:root {
+  /* Color palette to avoid repitition of hex codes*/
+  --primary-color: #2C3E50; 
+  --secondary-color: #4A6FA5; 
+  --text-color: #2D2D2D;      
+  --background-color: #ECF0F1;
+  --muted-color: #7D8CA3;     
+}
+
+/* the universal selector hre applies to everything 
+i'm also removing the default margins and paddings*/
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/*setting the font family, background color, text color, line height and padding for the body*/
+body {
+  font-family: IBM Plex Sans, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Setting the margin, padding, and border radius for the sections */
+section { margin: 40px auto; padding: 20px; border-radius: 12px; }
+
+/* Setting the color and margin for the h2 headings */
+h2 { color: var(--primary-color); margin-bottom: 16px; }
+
+
+
+/* Setting the position of the top navigation bar that contains the three main sections of the website */
+nav { display: flex; justify-content: center; margin: 16px auto 24px; width: max-content; }
+
+/* Setting the style for the navigation links */
+nav ul {
+  display: inline-flex;
+  gap: 32px;
+  list-style: none;
+  padding: 8px 16px;
+  background: var(--primary-color);
+  border-radius: 8px;
+}
+
+/* Styling the individual navigation links */
+nav a { color: #fff; font-weight: 600; text-decoration: none; }
+
+/* Setting the background of the about section and positioning its content ––the personal picture and the intro about me */
+#about { background: #fff; }
+.about-content { display: flex; gap: 24px; align-items: flex-start; margin-top: 12px; }
+.profile-pic { width: 240px; height: 320px; object-fit: cover; flex-shrink: 0; }
+.about-content p { flex: 1; }
+
+/* Setting the background of the projects section including its content and their positioning */
+#projects { background: #fff; }
+.projects-container { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
+.project-item {
+  flex: 1; min-width: 280px; max-width: 480px;
+  padding: 16px; border: 1px solid var(--muted-color); border-radius: 8px; background: #fff;
+}
+.project-logo { width: 100%; max-width: 200px; height: auto; margin: 0 auto 12px; display: block; }
+.project-item h3 { color: var(--secondary-color); margin-bottom: 8px; text-align: center; }
+.project-item p { text-align: justify; }
+
+/* Setting the background of the about me section including its content, the labels, and their inputs */
+#contact { background: #fff; }
+#contact form { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto; }
+.form-row { display: flex; gap: 12px; }
+.message-row { width: 100%; }
+.form-row div { flex: 1; display: flex; flex-direction: column; }
+#contact label { font-weight: 600; display: block; }
+#contact input, #contact textarea {
+  padding: 10px; border-radius: 6px; border: 1px solid var(--muted-color); margin-top: 4px; background: #fff; color: var(--text-color);
+}
+#contact textarea {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--muted-color);
+  margin-top: 4px;
+  background: #fff;
+  color: var(--text-color);
+}
+#contact button { padding: 10px 16px; border: none; border-radius: 6px; background: var(--secondary-color); color: #fff; cursor: pointer; }
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .about-content { flex-direction: column; }
+  .profile-pic { width: 100%; height: auto; }
+  .form-row { flex-direction: column; }
+}
