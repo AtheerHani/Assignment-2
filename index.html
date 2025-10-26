@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-<!-- The head contains metadata information about the document, the title, the favicon, and the CSS link -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,107 +10,124 @@
       href="assets/images/portait.JPG"
       sizes="32x32"
     />
-  </head> <!-- End of head  -->
-
-  <!-- Here Marks the beginning of the body; aka the full content of my webpage -->
+  </head>
   <body>
-    <!-- Here is the navigation bar that contains the links to my three main sections -->
+    <!-- Navigation -->
     <nav>
-      <!-- unordered list for the navigation bar -->
-      <ul id="navbar" >
+      <ul id="navbar">
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#github-stats">GitHub Stats</a></li>
         <li><a href="#contact">Contact Me</a></li>
       </ul>
-      
     </nav>
 
-    <!-- The first main section called "about me" -->
+    <!-- About -->
     <section id="about">
       <h2>About Me</h2>
-      <p id="greeting"></p>
-      <div class="about-content"> 
-        <!-- personal picture -->
+
+      <div class="about-content">
         <img
-        class="profile-pic"
-        src="assets/images/portait.JPG"
-        alt="Personal Image">
-
-      <!-- The tagline and the short intro about me -->
-      <p> <span style="font-size: 34px;">Atheer Al-Momtin</span> <br>
-        <br> <strong> Junior Software Engineering student focused on UI/UX, web, and app
-        development</strong> <br> <br>  I’m a Software Engineering student at King Fahd University of Petroleum
-        & Minerals (KFUPM), developing my skills in UI/UX, web, and application
-        development through initiatives like the Gaming+ Event and major
-        student-led conferences such as GSR and KISEF. Beyond campus, I’ve also
-        supported international delegations at academic Olympiads, where I
-        combined leadership and technical expertise to deliver impactful
-        experiences.
-      </p>
+          class="profile-pic"
+          src="assets/images/portait.JPG"
+          alt="Personal Image">
+        <p>
+          <span style="font-size: 34px;">Atheer Al-Momtin</span><br><br>
+          <strong>Junior Software Engineering student focused on UI/UX, web, and app development</strong><br><br>
+          I’m a Software Engineering student at King Fahd University of Petroleum &amp; Minerals (KFUPM), developing my skills in UI/UX, web, and application development through initiatives like the Gaming+ Event and major student-led conferences such as GSR and KISEF. Beyond campus, I’ve also supported international delegations at academic Olympiads, where I combined leadership and technical expertise to deliver impactful experiences.
+        </p>
       </div>
-      
-    </section> <!-- End of about me section -->
+    </section>
 
-    <!-- Here marks the beginning of the projects section -->
+    <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
-      <!-- The outer container of projects -->
-      <div class="projects-container">
-        <!-- The first project item -->
-        <div class="project-item">
-          <!-- The logo of this project -->
-          <img src="assets/images/FaceLite.png" alt="FaceLite Logo" class="project-logo">
-          <h3>FaceLite</h3>
-          <p>
-            FaceLite is a JavaFX-based social networking application where users can
-            create and customize profiles, add friends, share updates, and manage
-            photos. It includes features like friend search, image gallery, event
-            blasts, and error handling to simulate a small but functional social
-            platform.
-          </p>
-        </div>
-        <!-- The second project item -->
-        <div class="project-item">
-          <!-- The logo of this project -->
-          <img src="assets/images/Hujrah.png" alt="حُجرة Logo" class="project-logo">
-          <h3>حُجرة</h3>
-          <p>
-            حُجرة is a web platform that connects people with unused spaces
-            (garages, basements, spare rooms) to those seeking affordable storage
-            solutions. It provides listings, booking, secure payments, and
-            messaging, while empowering homeowners and renters to monetize idle
-            spaces and fostering a culture of sharing and sustainability in Saudi
-            Arabia.
-          </p>
+
+      <div class="project-controls">
+        <div class="search">
+          <label for="projectSearch" class="visually-hidden">Search projects</label>
+          <input id="projectSearch" type="search" placeholder="Search projects…" aria-label="Search projects">
         </div>
       </div>
-    </section> <!-- End of projects section -->
 
-    <!-- Here marks the beginning of the contact me section -->
+      <div class="projects-container">
+        <div class="project-item" data-category="app" data-title="FaceLite">
+          <img src="assets/images/FaceLite.png" alt="FaceLite Logo" class="project-logo">
+          <h3>FaceLite</h3>
+          <details>
+            <summary>Show details</summary>
+            <p>
+              FaceLite is a JavaFX-based social networking application where users can
+              create and customize profiles, add friends, share updates, and manage
+              photos. It includes features like friend search, image gallery, event
+              blasts, and error handling to simulate a small but functional social
+              platform.
+            </p>
+          </details>
+        </div>
+
+        <div class="project-item" data-category="web" data-title="حُجرة">
+          <img src="assets/images/Hujrah.png" alt="حُجرة Logo" class="project-logo">
+          <h3>حُجرة</h3>
+          <details>
+            <summary>Show details</summary>
+            <p>
+              حُجرة is a web platform that connects people with unused spaces
+              (garages, basements, spare rooms) to those seeking affordable storage
+              solutions. It provides listings, booking, secure payments, and
+              messaging, while empowering homeowners and renters to monetize idle
+              spaces and fostering a culture of sharing and sustainability in Saudi
+              Arabia.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Stats -->
+    <section id="github-stats">
+      <h2>GitHub Stats</h2>
+      <div class="stats-card">
+        <form id="ghForm" class="inline-form" autocomplete="off">
+          <label for="ghInput" class="visually-hidden">GitHub profile URL or username</label>
+          <input id="ghInput" name="ghInput" type="text" placeholder="Paste GitHub profile URL or type username (e.g., torvalds)" />
+          <button type="submit" id="ghFetch">Check Repos</button>
+          <button type="button" id="ghRetry" hidden>Retry</button>
+        </form>
+        <p id="ghStatus" class="muted">Enter a GitHub profile URL or username, then click “Check Repos”.</p>
+        <p id="ghResult" class="status" aria-live="polite" hidden></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact Me</h2>
-      <!-- The form to contact me, with labels, fields, and a submit button -->
-        <form>
-          <div class="form-row">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" type="text" name="name" placeholder="Atheer Almomtin" required />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" type="email" name="email" placeholder="name@gmail.com" required />
-            </div>
-          </div>
-
+      <form>
+        <div class="form-row">
           <div>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your message"></textarea>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Atheer Almomtin" required />
+            <span class="error" id="nameError" role="alert" aria-live="polite"></span>
           </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="name@gmail.com" required />
+            <span class="error" id="emailError" role="alert" aria-live="polite"></span>
+          </div>
+        </div>
 
-          <button type="submit">Send</button>
-        </form>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your message"></textarea>
+          <span class="error" id="messageError" role="alert" aria-live="polite"></span>
+        </div>
 
-    </section> <!-- End of contact me section -->
-    <script src="js/script.js"></script> <!-- Here is the link to the JavaScript file -->
-  </body> <!-- end of thi's file's body -->
+        <button type="submit">Send</button>
+        <p id="formStatus" class="status" aria-live="polite" hidden></p>
+      </form>
+    </section>
+
+    <noscript><p class="muted">JavaScript is required for interactive features.</p></noscript>
+    <script src="js/script.js"></script>
+  </body>
 </html>
